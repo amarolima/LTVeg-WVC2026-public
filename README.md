@@ -31,8 +31,15 @@ redistribution. Instead, this repository provides:
   identical, the same scene, or different from the one used in the paper, and arranges the accepted
   images into the folder structure used by the training code.
 
-Google updates its mosaic, so some images regenerated today may show a newer acquisition. The
-verifier reports this image by image. See [docs/02_REGENERATING_THE_DATASET.md](docs/02_REGENERATING_THE_DATASET.md).
+```bash
+conda create -n qgis -c conda-forge qgis=3.40.3                       # once
+conda run -n qgis python src/extraction/regenerate_images_qgis.py --out regenerated/    # ~2 min, headless
+python src/dataset/verify_dataset.py --images regenerated/ --organize data/dataset
+```
+
+Google has updated its imagery since the dataset was built, so bit-identical copies are no longer
+possible. On 25/10/2026, 305 of the 351 regenerated images were the same scene, 27 needed a visual
+check and 19 showed a newer acquisition. See [docs/02_REGENERATING_THE_DATASET.md](docs/02_REGENERATING_THE_DATASET.md).
 
 ## Quick start (no GPU, no images, ~1 minute)
 

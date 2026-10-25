@@ -37,4 +37,5 @@ Neither of them changes a conclusion of the paper.
   `regenerate_images_qgis.py`.
 * The curation step (49 of 400 images discarded) and the train/val/test split were done by hand, and
   their procedure was not recorded. The split is fixed by `labels.csv`.
-* `regenerate_images_qgis.py` has not yet been run end to end by the authors.
+* The Google imagery has changed since the dataset was built (May 2026). Regenerated images are
+  at best `SAME_SCENE` (305 of 351 on 25/10/2026), never bit-identical. See doc 02, §4.

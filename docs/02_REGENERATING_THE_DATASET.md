@@ -26,23 +26,25 @@ vegetation → OK. The label refers to the image as acquired at extraction time 
 
 ## 2. Regenerating the images in QGIS
 
-Requirements: QGIS 3.x with Python ≥ 3.10. Internet access is needed for the Google Satellite XYZ
-layer.
+Requirements: QGIS 3.40 (the LTR series used to build the dataset) and internet access for the
+Google Satellite XYZ layer. No display is needed. The simplest route is the conda-forge build:
 
-1. Open QGIS with an empty project, then *Plugins → Python Console → Show Editor*.
-2. Open `src/extraction/regenerate_images_qgis.py` and set `LABELS_CSV` (path to `data/labels.csv`) and
-   `OUTPUT_DIR` (an empty folder).
-3. Run it. It renders the 351 towers of `labels.csv`, with no random sampling, using the parameters
-   of the original extractor (`src/extraction/extrator_imagens.py`):
-   * EPSG:4674 → EPSG:3857 (Web Mercator, the CRS of the Google mosaic);
-   * extent of 162.5 m × 162.5 m centred on the tower;
-   * 650 × 650 px, i.e. 0.25 m/pixel nominal;
-   * only the Google Satellite layer is rendered.
+```bash
+conda create -n qgis -c conda-forge qgis=3.40.3          # ~1-2 GB, independent of the "ltveg" env
+conda run -n qgis python src/extraction/regenerate_images_qgis.py --labels data/labels.csv --out regenerated/
+```
 
-   The script is resumable: images already in `OUTPUT_DIR` are skipped.
+The script renders the 351 towers of `labels.csv`, with no random sampling, using the parameters of
+the original extractor (`src/extraction/extrator_imagens.py`):
 
-> The regeneration script reproduces the rendering calls of the original extractor, but it has not
-> yet been run end to end by the authors. Please open an issue if it fails.
+* EPSG:4674 → EPSG:3857 (Web Mercator, the CRS of the Google mosaic);
+* extent of 162.5 m × 162.5 m centred on the tower;
+* 650 × 650 px, i.e. 0.25 m/pixel nominal (the layer serves zoom 19, which QGIS resamples);
+* only the Google Satellite layer is rendered.
+
+It takes about 2 minutes, is resumable (images already in the output folder are skipped) and is
+deterministic: two runs give identical pixels. It also runs from the Python console of a desktop
+QGIS: set `LABELS_CSV` and `OUTPUT_DIR` at the top of the file and press *Run*.
 
 ## 3. Verifying and organizing
 
@@ -83,7 +85,28 @@ The only pair of *different* files closer than 13 is `57854_G4_230.png` × `5789
 (distance 2/4). These are two towers 2 m apart whose footprints overlap by 98 %, so they really are
 the same scene.
 
-## 4. What reproduces exactly and what does not
+## 4. What to expect
+
+**Exact copies are no longer possible.** The original images were extracted in May 2026. Since then
+Google has re-encoded or replaced the tiles. We regenerated all 351 images on 25/10/2026, and
+compared them with the fingerprints:
+
+| Status | Images |
+|---|---|
+| `IDENTICAL_FILE` / `IDENTICAL_PIXELS` | 0 |
+| `SAME_SCENE` | 305 (87 %) |
+| `CHECK` | 27 |
+| `DIFFERENT` | 19 |
+
+Over all 351 images the mean absolute error per pixel is 3.5 grey levels out of 255 (median). An
+independent re-implementation of the rendering (zoom-19 tiles mosaicked and bilinearly resampled in
+pure Python) gives the **same** error, within 0.02 levels, and differs from the QGIS output by
+0.03 levels on average. So the residual is in the imagery, not in the rendering, and the geometry
+is exact: the best sub-pixel offset is zero. Visual inspection of `DIFFERENT` images shows the same
+place, aligned, but with a newer acquisition (season, colour and shadows changed).
+
+How much this matters: recomputing the colour baseline on the 351 images regenerated that day gives
+a test macro-F1 of 62.3 % instead of 64.7 %, and ROC-AUC 0.735 instead of 0.772.
 
 | Your images | What you get |
 |---|---|

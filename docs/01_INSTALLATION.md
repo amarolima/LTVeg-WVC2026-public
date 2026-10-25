@@ -35,5 +35,13 @@ jupyter nbconvert --to notebook --execute --inplace notebooks/reproduce_paper.ip
 The full `pip freeze` of the environment used for the paper is in `results/environment_freeze.txt`.
 The experiments ran on an NVIDIA RTX 4050 Laptop GPU (6 GB) with CUDA 12.4.
 
-QGIS 3.x is needed only to regenerate the images ([02](02_REGENERATING_THE_DATASET.md)). It is used
-through its own Python console, not through this environment.
+QGIS is needed only to regenerate the images ([02](02_REGENERATING_THE_DATASET.md)). Install it in a
+**separate** environment, because it brings its own Qt and GDAL:
+
+```bash
+conda create -n qgis -c conda-forge qgis=3.40.3
+conda run -n qgis python -c "from qgis.core import Qgis; print(Qgis.version())"   # 3.40.3-Bratislava
+```
+
+The dataset was built with QGIS 3.40.12 (same LTR series) on Windows. The regeneration script was
+tested with 3.40.3 on Linux, headless.
