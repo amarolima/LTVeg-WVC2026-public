@@ -81,6 +81,11 @@ docs/                         installation, dataset regeneration, reproduction, 
 | [03 — Reproducing the paper](docs/03_REPRODUCING_THE_PAPER.md) | paper → code → result map; retraining |
 | [04 — Known issues](docs/04_KNOWN_ISSUES.md) | inconsistencies found in the paper and limitations |
 
+## Licence
+
+Code: MIT ([`LICENSE`](LICENSE)). Labels, fingerprints and results: CC BY 4.0. EPE metadata keeps its
+original terms. YOLO26 (Ultralytics) is AGPL-3.0. Details in [`LICENSE-DATA.md`](LICENSE-DATA.md).
+
 ## Citation
 
 See [`CITATION.cff`](CITATION.cff). Figures that show dataset images must credit *Imagery © Google*.
