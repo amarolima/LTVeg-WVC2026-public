@@ -1,0 +1,18 @@
+{
+  "resnet18": {
+    "params": 11177538,
+    "params_M": 11.18,
+    "gflops": 29.77,
+    "checkpoint_size_MB": 44.79,
+    "inference_latency_ms": 8.572,
+    "epoch_time_s": 8.81
+  },
+  "yolo26": {
+    "params": 5445570,
+    "params_M": 5.45,
+    "gflops": 12.13,
+    "checkpoint_size_MB": 11.02,
+    "inference_latency_ms": 4.463,
+    "epoch_time_s": 5.21
+  }
+}

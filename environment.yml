@@ -1,0 +1,13 @@
+# Ambiente usado no artigo do WVC 2026 (versões do pip freeze em results/environment_freeze.txt).
+#   conda env create -f environment.yml && conda activate ltveg
+name: ltveg
+channels:
+  - conda-forge
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - --extra-index-url https://download.pytorch.org/whl/cu124
+      - torch==2.6.0
+      - torchvision==0.21.0
+      - -r requirements.txt

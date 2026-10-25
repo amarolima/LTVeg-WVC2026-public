@@ -1,0 +1,43 @@
+{
+  "model": "ResNet18 (ImageNet-pretrained, fine-tuned)",
+  "img_size": 640,
+  "batch_size": 16,
+  "best_epoch_val_macro_f1": 93.08,
+  "n_train": 210,
+  "n_val": 72,
+  "n_test": 69,
+  "validation": {
+    "OK": {
+      "recall": 94.34,
+      "precision": 98.04,
+      "f1": 96.15,
+      "error": 5.66,
+      "support": 53
+    },
+    "NOK": {
+      "recall": 94.74,
+      "precision": 85.71,
+      "f1": 90.0,
+      "error": 5.26,
+      "support": 19
+    },
+    "macro_f1": 93.08
+  },
+  "test": {
+    "OK": {
+      "recall": 94.12,
+      "precision": 92.31,
+      "f1": 93.2,
+      "error": 5.88,
+      "support": 51
+    },
+    "NOK": {
+      "recall": 77.78,
+      "precision": 82.35,
+      "f1": 80.0,
+      "error": 22.22,
+      "support": 18
+    },
+    "macro_f1": 86.6
+  }
+}

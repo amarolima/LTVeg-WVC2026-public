@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this code or the labels, please cite the paper."
+title: "Vegetation Encroachment Screening in Transmission-Line Rights-of-Way from Satellite Imagery — code and labels"
+authors:
+  - family-names: Braga
+    given-names: Daniel C. S.
+  - family-names: Gois
+    given-names: Jonathan N.
+  - family-names: Passos
+    given-names: Wesley L.
+  - family-names: Lima
+    given-names: Amaro A.
+  - family-names: Araujo
+    given-names: Gabriel M.
+preferred-citation:
+  type: conference-paper
+  title: "Vegetation Encroachment Screening in Transmission-Line Rights-of-Way from Satellite Imagery"
+  authors:
+    - family-names: Braga
+      given-names: Daniel C. S.
+    - family-names: Gois
+      given-names: Jonathan N.
+    - family-names: Passos
+      given-names: Wesley L.
+    - family-names: Lima
+      given-names: Amaro A.
+    - family-names: Araujo
+      given-names: Gabriel M.
+  collection-title: "Workshop de Visão Computacional (WVC 2026)"
+  year: 2026

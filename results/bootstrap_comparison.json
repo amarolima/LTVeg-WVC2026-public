@@ -1,0 +1,62 @@
+{
+  "n_resnet": 30,
+  "n_yolo": 30,
+  "comparisons": {
+    "test_macro_f1": {
+      "resnet_mean": 83.13,
+      "yolo_mean": 81.82,
+      "diff_resnet_minus_yolo": 1.31,
+      "welch_t": 1.095,
+      "p_value": 0.27807,
+      "significant_at_0.05": false
+    },
+    "test_OK_recall": {
+      "resnet_mean": 91.37,
+      "yolo_mean": 92.35,
+      "diff_resnet_minus_yolo": -0.98,
+      "welch_t": -0.67,
+      "p_value": 0.50546,
+      "significant_at_0.05": false
+    },
+    "test_OK_precision": {
+      "resnet_mean": 91.38,
+      "yolo_mean": 89.94,
+      "diff_resnet_minus_yolo": 1.44,
+      "welch_t": 1.576,
+      "p_value": 0.12049,
+      "significant_at_0.05": false
+    },
+    "test_OK_f1": {
+      "resnet_mean": 91.17,
+      "yolo_mean": 90.99,
+      "diff_resnet_minus_yolo": 0.17,
+      "welch_t": 0.251,
+      "p_value": 0.80297,
+      "significant_at_0.05": false
+    },
+    "test_NOK_recall": {
+      "resnet_mean": 74.81,
+      "yolo_mean": 70.0,
+      "diff_resnet_minus_yolo": 4.81,
+      "welch_t": 1.531,
+      "p_value": 0.13123,
+      "significant_at_0.05": false
+    },
+    "test_NOK_precision": {
+      "resnet_mean": 77.66,
+      "yolo_mean": 77.93,
+      "diff_resnet_minus_yolo": -0.27,
+      "welch_t": -0.106,
+      "p_value": 0.91613,
+      "significant_at_0.05": false
+    },
+    "test_NOK_f1": {
+      "resnet_mean": 75.09,
+      "yolo_mean": 72.64,
+      "diff_resnet_minus_yolo": 2.44,
+      "welch_t": 1.326,
+      "p_value": 0.19033,
+      "significant_at_0.05": false
+    }
+  }
+}

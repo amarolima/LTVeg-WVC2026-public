@@ -1,0 +1,51 @@
+{
+  "n_replicates": 30,
+  "val_macro_f1": {
+    "mean": 90.66,
+    "std": 2.14,
+    "ci95_lo": 87.48,
+    "ci95_hi": 93.53
+  },
+  "test_OK_recall": {
+    "mean": 92.35,
+    "std": 4.78,
+    "ci95_lo": 81.81,
+    "ci95_hi": 98.04
+  },
+  "test_OK_precision": {
+    "mean": 89.94,
+    "std": 3.72,
+    "ci95_lo": 82.09,
+    "ci95_hi": 95.77
+  },
+  "test_OK_f1": {
+    "mean": 90.99,
+    "std": 2.39,
+    "ci95_lo": 86.43,
+    "ci95_hi": 94.56
+  },
+  "test_NOK_recall": {
+    "mean": 70.0,
+    "std": 13.02,
+    "ci95_lo": 42.92,
+    "ci95_hi": 88.89
+  },
+  "test_NOK_precision": {
+    "mean": 77.93,
+    "std": 9.37,
+    "ci95_lo": 61.35,
+    "ci95_hi": 92.86
+  },
+  "test_NOK_f1": {
+    "mean": 72.64,
+    "std": 8.08,
+    "ci95_lo": 53.23,
+    "ci95_hi": 83.99
+  },
+  "test_macro_f1": {
+    "mean": 81.82,
+    "std": 5.02,
+    "ci95_lo": 70.8,
+    "ci95_hi": 89.19
+  }
+}

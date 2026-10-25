@@ -1,0 +1,23 @@
+# NEVER commit images or trained weights (Google imagery; see docs/02)
+data/dataset/**/*.png
+data/dataset/**/*.jpg
+*.pt
+*.pth
+*.onnx
+
+# regenerable outputs
+results/paper/
+results/rerun/
+results/geo/
+results/figuras_extras/
+results/dataset_verification.csv
+results/**/work/
+runs/
+*.cache
+
+# Python / Jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+.DS_Store

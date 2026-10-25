@@ -1,0 +1,78 @@
+{
+  "bootstrap": [
+    {
+      "name": "exg_mean (limiar)",
+      "macro_f1_mean": 50.47043333333334,
+      "macro_f1_std": 1.2173796073968657,
+      "nok_recall_mean": 57.96296,
+      "nok_recall_std": 15.20984914449663
+    },
+    {
+      "name": "exg_frac (limiar)",
+      "macro_f1_mean": 53.85126333333333,
+      "macro_f1_std": 1.0674505100321103,
+      "nok_recall_mean": 70.18517999999999,
+      "nok_recall_std": 12.759308413303327
+    },
+    {
+      "name": "lab_a_mean (limiar)",
+      "macro_f1_mean": 51.74259333333334,
+      "macro_f1_std": 2.1151319999459615,
+      "nok_recall_mean": 62.03705666666667,
+      "nok_recall_std": 13.614796722599742
+    },
+    {
+      "name": "green_ratio (limiar)",
+      "macro_f1_mean": 49.533126666666675,
+      "macro_f1_std": 2.392787524744877,
+      "nok_recall_mean": 29.44444,
+      "nok_recall_std": 14.817597031246793
+    },
+    {
+      "name": "logreg 6 features",
+      "macro_f1_mean": 64.66380333333332,
+      "macro_f1_std": 2.472154071541009,
+      "nok_recall_mean": 80.74073666666666,
+      "nok_recall_std": 5.600070521014297
+    }
+  ],
+  "ranking": [
+    {
+      "name": "exg_mean",
+      "ap": 0.2980215778551933,
+      "roc_auc": 0.5827886710239651
+    },
+    {
+      "name": "exg_frac",
+      "ap": 0.3131342909335492,
+      "roc_auc": 0.6209150326797386
+    },
+    {
+      "name": "lab_a_mean",
+      "ap": 0.31037606332253215,
+      "roc_auc": 0.6122004357298475
+    },
+    {
+      "name": "green_ratio",
+      "ap": 0.35400190560366285,
+      "roc_auc": 0.5773420479302832
+    },
+    {
+      "name": "logreg",
+      "ap": 0.43668349999687633,
+      "roc_auc": 0.7723311546840959
+    }
+  ],
+  "correlations": {
+    "resnet_vs_exg_mean": 0.17075523044263294,
+    "resnet_vs_exg_frac": 0.17954331663460718,
+    "resnet_vs_lab_a_mean": 0.25193525134571654,
+    "resnet_vs_green_ratio": 0.11102073301164979,
+    "resnet_vs_logreg": 0.5277774495618895,
+    "yolo_vs_exg_mean": 0.13637413346301527,
+    "yolo_vs_exg_frac": 0.18665223005903636,
+    "yolo_vs_lab_a_mean": 0.21115933229923137,
+    "yolo_vs_green_ratio": 0.09395147677251009,
+    "yolo_vs_logreg": 0.6035130394038043
+  }
+}
